@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+sqlalchemy
+python-dotenv
+# esta es para PostgreSQL:
+psycopg2-binary
