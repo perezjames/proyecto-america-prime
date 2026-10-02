@@ -5,6 +5,8 @@ export default function Guillermo() {
     <div className="guillermo-container">
       <h1 className="title">esta es la página de guillermo, el login</h1>
 
+      <button>holaaaa</button>
+
 
 
 
