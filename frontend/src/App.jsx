@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+/* import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Juan from './juan/Juan';
 import Jesus from './jesus/Jesus';
 import Guillermo from './guillermo/Guillermo';
@@ -23,6 +23,17 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
+}
+
+export default App; */
+
+
+
+
+import AppRouter from './routes/AppRouter';
+
+function App() {
+  return <AppRouter />;
 }
 
 export default App;
