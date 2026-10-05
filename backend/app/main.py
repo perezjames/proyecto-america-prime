@@ -4,12 +4,11 @@ from app.api.v1.router import api_router
 
 app = FastAPI(title="API America Prime", version="1.0.0")
 
-# Configuración de CORS para el Frontend
+# Configuración de CORS front
 origins = [
-    "http://localhost:5173",  # port default por defecto de Vite
+    "http://localhost:5173",  # port default vite
     "http://127.0.0.1:5173",
-    # Cuando despliegues el frontend en Vercel, agrega la URL aquí:
-    # "https://tu-frontend.vercel.app",
+    "https://proyecto-america-prime.vercel.app", # front vercel
 ]
 
 app.add_middleware(
