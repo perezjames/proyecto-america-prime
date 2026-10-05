@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Juan from './juan/Juan';
 import Jesus from './jesus/Jesus';
 import Guillermo from './guillermo/Guillermo';
+import ProductosList from './components/ProductosList';
 
 function App() {
   return (
@@ -10,12 +11,14 @@ function App() {
         <Link to="/juan">Juan</Link>
         <Link to="/jesus">Jesús</Link>
         <Link to="/guillermo">Guillermo</Link>
+        <Link to="/productoslist">Productos</Link>
       </nav>
 
       <Routes>
         <Route path="/juan" element={<Juan />} />
         <Route path="/jesus" element={<Jesus />} />
         <Route path="/guillermo" element={<Guillermo />} />
+        <Route path="/productoslist" element={<ProductosList />} />
         <Route path="*" element={<h2>Selecciona una ruta arriba</h2>} />
       </Routes>
     </BrowserRouter>
