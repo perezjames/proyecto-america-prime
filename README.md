@@ -13,4 +13,13 @@ Aplicación web para la gestión de inventario y operaciones de America Prime
 │       └── main.py
 └── frontend/
     └── src/
+        ├── api/
+        ├── components/
+        │   ├── layout/
+        │   └── common/
+        ├── pages/
+        ├── services/
+        ├── routes/
+        ├── App.jsx
+        └── main.jsx
 ```
