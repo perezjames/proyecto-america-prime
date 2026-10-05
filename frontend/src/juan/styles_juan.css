@@ -1,0 +1,97 @@
+/* ============================================================
+   PALETA DE COLORES: cámbiala aquí y se actualiza toda la tabla.
+   (Valores provisionales: reemplázalos por los de americaprime.co)
+   ============================================================ */
+.stock-card {
+  --fondo:          #14100f;  /* fondo de la tarjeta */
+  --fondo-tabla:    #1a1413;  /* fondo de la tabla */
+  --fondo-cabecera: #100c0b;  /* fila de títulos y buscador */
+  --borde:          #3a2b28;  /* líneas y bordes */
+  --texto:          #f3ece4;  /* texto principal */
+  --texto-suave:    #a99b92;  /* texto secundario */
+  --acento:         #c9a14a;  /* dorado: ID de lote y foco */
+  --alerta:         #e0a84a;  /* fecha de vencimiento */
+  --ok-fondo:   #1c3326;  --ok-texto:   #7fcf9a;  --ok-borde:   #2f5a40;
+  --bajo-fondo: #4a1620;  --bajo-texto: #f08a95;  --bajo-borde: #7c2634;
+
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  padding: 24px;
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* Título a la izquierda, buscador a la derecha */
+.stock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.stock-title { margin: 0; font-size: 1.5rem; }
+.stock-sub { margin: 6px 0 0; color: var(--texto-suave); font-size: 0.9rem; }
+
+/* Buscador en forma de píldora */
+.stock-search {
+  min-width: 280px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--borde);
+  background: var(--fondo-cabecera);
+  color: var(--texto);
+  font-size: 0.95rem;
+}
+.stock-search::placeholder { color: var(--texto-suave); }
+.stock-search:focus { outline: 2px solid var(--acento); }
+
+/* Marco y tabla */
+.stock-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  background: var(--fondo-tabla);
+}
+
+.stock-table { width: 100%; border-collapse: collapse; text-align: left; }
+
+.stock-table th {
+  padding: 16px 20px;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  background: var(--fondo-cabecera);
+  border-bottom: 1px solid var(--borde);
+}
+
+.stock-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--borde);
+  vertical-align: middle;
+  font-size: 0.92rem;
+}
+.stock-table tbody tr:last-child td { border-bottom: none; }
+.stock-table tbody tr:hover { background: var(--fondo); }
+
+/* Detalles */
+.stock-table small { display: block; margin-top: 3px; color: var(--texto-suave); font-size: 0.78rem; }
+.stock-table .num { text-align: right; font-size: 1.1rem; }
+.lote-id { color: var(--acento); font-weight: 600; }
+.vence { display: block; color: var(--alerta); font-weight: 600; }
+.vacio { text-align: center; color: var(--texto-suave); }
+
+/* Pastillas de estado */
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+.badge-ok   { background: var(--ok-fondo);   color: var(--ok-texto);   border: 1px solid var(--ok-borde); }
+.badge-bajo { background: var(--bajo-fondo); color: var(--bajo-texto); border: 1px solid var(--bajo-borde); }
