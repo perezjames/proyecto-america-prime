@@ -1,17 +1,16 @@
-# Proyecto América Prime
+# Proyecto America Prime
 
 Aplicación web para la gestión de inventario y operaciones de America Prime
 
 ## Estructura
 
-```text
-.
+```
 ├── backend/
 │   └── app/
-│       ├── api/v1/endpoints/   # Endpoints de la API
-│       ├── core/               # Integración con Supabase
-│       ├── schemas/            # Esquemas de datos
-│       └── main.py             # Aplicación FastAPI
+│       ├── api/v1/endpoints/
+│       ├── core/
+│       ├── schemas/
+│       └── main.py
 └── frontend/
-    └── src/                    # Aplicación React
+    └── src/
 ```
