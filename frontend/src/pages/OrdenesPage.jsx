@@ -1,7 +1,7 @@
 export default function OrdenesPage() {
   return (
     <div>
-      <h1>LotesPage</h1>
+      <h1>OrdenesPage</h1>
     </div>
   );
 }
