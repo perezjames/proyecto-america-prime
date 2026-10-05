@@ -1,4 +1,5 @@
 import './styles_juan.css';
+import StockBodega from "./StockBodega";
 
 export default function Juan() {
   return (
