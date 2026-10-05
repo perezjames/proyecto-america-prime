@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, status
 from typing import List
 from app.core.supabase import supabase
-from app.schemas.usuarios import UsuarioCreate, UsuarioUpdate, UsuarioResponse
+from app.schemas.usuarios import UsuarioCreate, UsuarioUpdate, UsuarioResponse, UsuarioLogin
 
 router = APIRouter()
 
@@ -40,3 +40,28 @@ def delete_usuario(id_usuario: int):
     if not response.data:
         raise HTTPException(status_code=404, detail="Usuario no encontrado")
     return {"mensaje": f"Usuario {id_usuario} eliminado correctamente"}
+
+@router.post("/login")
+def login(credentials: UsuarioLogin):
+    response = supabase.table("USUARIOS")\
+        .select("*")\
+        .eq("email", credentials.email)\
+        .eq("password_hash", credentials.password)\
+        .execute()
+    
+    if not response.data:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Correo o contraseña incorrectos"
+        )
+    
+    usuario = response.data[0]
+    return {
+        "mensaje": "Inicio de sesión exitoso",
+        "usuario": {
+            "id_usuario": usuario["id_usuario"],
+            "nombre": usuario["nombre"],
+            "email": usuario["email"],
+            "rol": usuario["rol"]
+        }
+    }
