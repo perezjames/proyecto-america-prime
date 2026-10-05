@@ -1,15 +1,15 @@
 import { useState } from "react";
 import "./styles_juan.css";
 
-// 1. Los datos: cada { } es un lote (una fila de la tabla)
+// Los datos del stock
 const LOTES = [
   { id: 101, producto: "Ribeye Lip-On US Prime Angus", presentacion: "Caja x 12 Unidades Vacuum Pack", loteProveedor: "LOT-USA-2026-A1", embalaje: "2026-08-15", vence: "2026-11-15", oz: 16, cantidad: 120, minimo: 30 },
-  { id: 102, producto: "Tomahawk Steak Choice Beef", presentacion: "Caja x 8 Unidades Vacuum Pack", loteProveedor: "LOT-USA-2026-T9", embalaje: "2026-08-18", vence: "2026-10-30", oz: 32, cantidad: 22, minimo: 30 },
+  { id: 102, producto: "Tomahawk Steak Choice Beef", presentacion: "Caja x 8 Unidades Vacuum Pack", loteProveedor: "LOT-USA-2026-T9", embalaje: "2026-08-18", vence: "2026-10-30", oz: 32, cantidad: 22, minimo: 20 },
   { id: 103, producto: "New York Strip Loin Bone-In", presentacion: "Caja x 15 Unidades Vacuum Pack", loteProveedor: "LOT-ARG-2026-N2", embalaje: "2026-08-25", vence: "2026-12-01", oz: 14, cantidad: 85, minimo: 30 },
   { id: 104, producto: "Tenderloin Beef Center Cut (Lomo)", presentacion: "Caja x 10 Unidades", loteProveedor: "LOT-ARG-2026-L5", embalaje: "2026-08-28", vence: "2026-11-20", oz: 8, cantidad: 18, minimo: 30 },
 ];
 
-// 2. La maquinita: convierte onzas a gramos
+// El convertidor
 const ozAGr = (oz) => (oz * 28.35).toFixed(1);
 
 export default function StockBodega() {
@@ -28,7 +28,7 @@ export default function StockBodega() {
     <section className="stock-card">
       <header className="stock-header">
         <div>
-          <h2 className="stock-title">📦 Consultar Stock Real en Bodega</h2>
+          <h2 className="stock-title">📦 Consultar Stock en Bodega</h2>
           <p className="stock-sub">
             Visualización en tiempo real de lotes, pesos, sanitarios y fechas de vencimiento.
           </p>

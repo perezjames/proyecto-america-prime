@@ -3,8 +3,8 @@
    (Valores provisionales: reemplázalos por los de americaprime.co)
    ============================================================ */
 .stock-card {
-  --fondo:          #14100f;  /* fondo de la tarjeta */
-  --fondo-tabla:    #1a1413;  /* fondo de la tabla */
+  --fondo:          #14100f;  /*color de fondo de la tarjeta */
+  --fondo-tabla:    #1a1413;  /* color de fondo de la tabla */
   --fondo-cabecera: #100c0b;  /* fila de títulos y buscador */
   --borde:          #3a2b28;  /* líneas y bordes */
   --texto:          #f3ece4;  /* texto principal */
