@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.router import api_router
 
-app = FastAPI(title="API Sistema de Inventario", version="1.0.0")
+app = FastAPI(title="API America Prime", version="1.0.0")
 
 # Configuración de CORS para el Frontend
 origins = [
