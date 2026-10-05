@@ -1,6 +1,8 @@
 import './styles_juan.css';
 import StockBodega from "./StockBodega";
 
+<StockBodega />
+
 export default function Juan() {
   return (
     <div className="juan-container">
