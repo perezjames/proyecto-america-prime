@@ -8,6 +8,8 @@ import OrdenesPage from '../pages/OrdenesPage';
 import RecepcionesPage from '../pages/RecepcionesPage';
 import LotesPage from '../pages/LotesPage';
 import MovimientosPage from '../pages/MovimientosPage';
+import Jesus from '../pages/jesus/Jesus';
+import Guillermo from '../pages/guillermo/Guillermo';
 
 function ProtectedRoute({ children }) {
   const user = localStorage.getItem('user');
@@ -31,6 +33,8 @@ export default function AppRouter() {
                 <Route path="/recepciones" element={<RecepcionesPage />} />
                 <Route path="/lotes" element={<LotesPage />} />
                 <Route path="/movimientos" element={<MovimientosPage />} />
+                <Route path="/jesus" element={<Jesus />} />
+                <Route path="/guillermo" element={<Guillermo />} />
               </Routes>
             </Layout>
           </ProtectedRoute>
