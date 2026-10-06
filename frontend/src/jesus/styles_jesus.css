@@ -1,4 +1,153 @@
-.title2 {
-    background-color: yellow;
-    color: red;
+/* ELIMINAMOS los estilos globales de body para no dañar la página de inicio */
+
+/* Contenedor principal de tu tarjeta (centrado de forma aislada) */
+.card {
+    background-color: #121826;
+    border: 1px solid #1f293d;
+    padding: 30px;
+    border-radius: 12px;
+    width: 450px;
+    margin: 40px auto; /* Se centra automáticamente sin romper otras vistas */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.card h1 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.campo {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.card label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #e5e7eb;
+}
+
+/* Apariencia de la barra de selección tipo input */
+.select-personalizado {
+    position: relative;
+    width: 100%;
+}
+
+.select-trigger {
+    background-color: #1a2234;
+    border: 1px solid #2d3748;
+    color: #9ca3af;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.select-trigger:hover {
+    border-color: #10b981;
+}
+
+.flecha {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.flecha.girar {
+    transform: rotate(180deg);
+}
+
+/* El cajón de opciones desplegable */
+.cajon-desplegable {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: 100%;
+    background-color: #1a2234;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    max-height: 150px;
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+/* Elementos dentro del cajón */
+.opcion-item {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal !important;
+    color: #d1d5db;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.opcion-item:hover {
+    background-color: #243049;
+}
+
+.opcion-item input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #10b981;
+}
+
+/* Botón de confirmar */
+.btn-confirmar {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.btn-confirmar:hover {
+    background-color: #059669;
+}
+.input-cantidad {
+    width: 100%;
+    background-color: #1a2234;
+    border: 1px solid #2d3748;
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-cantidad::placeholder {
+    color: #9ca3af;
+}
+
+.input-cantidad:focus {
+    border-color: #10b981;
 }
