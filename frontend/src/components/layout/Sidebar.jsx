@@ -14,12 +14,14 @@ const drawerWidth = 240;
 
 const menuItems = [
   { text: 'Dashboard', icon: <DashboardIcon />, path: '/' },
-  { text: 'Productos', icon: <InventoryIcon />, path: '/productos' },
+  { text: 'Productos/Juan', icon: <InventoryIcon />, path: '/productos' },
   { text: 'Usuarios', icon: <PeopleIcon />, path: '/usuarios' },
   { text: 'Órdenes de Compra', icon: <ShoppingCartIcon />, path: '/ordenes' },
   { text: 'Recepciones', icon: <LocalShippingIcon />, path: '/recepciones' },
   { text: 'Lotes Inventario', icon: <QrCodeIcon />, path: '/lotes' },
   { text: 'Movimientos', icon: <SwapHorizIcon />, path: '/movimientos' },
+  { text: 'Jesus', icon: <SwapHorizIcon />, path: '/jesus' },
+  { text: 'Guillermo', icon: <SwapHorizIcon />, path: '/guillermo' },
 ];
 
 export default function Sidebar() {
