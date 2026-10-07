@@ -1,0 +1,23 @@
+name: Auto Merge Subbranches to Frontend
+
+on:
+  push:
+    branches:
+      - 'frontend-*'  # Se activa al hacer push en frontend-{name}
+
+jobs:
+  merge-to-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Merge into frontend
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout frontend
+          git merge ${{ github.ref }} --no-ff -m "Auto-merge de ${{ github.ref_name }} a frontend"
+          git push origin frontend
