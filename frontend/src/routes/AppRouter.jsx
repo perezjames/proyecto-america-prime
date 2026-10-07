@@ -1,44 +1,110 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
-import LoginPage from '../pages/LoginPage';
 import DashboardPage from '../pages/DashboardPage';
-import ProductosPage from '../pages/ProductosPage';
-import UsuariosPage from '../pages/UsuariosPage';
-import OrdenesPage from '../pages/OrdenesPage';
-import RecepcionesPage from '../pages/RecepcionesPage';
+import LoginPage from '../pages/LoginPage';
 import LotesPage from '../pages/LotesPage';
 import MovimientosPage from '../pages/MovimientosPage';
-import Jesus from '../pages/jesus/Jesus';
-import Guillermo from '../pages/guillermo/Guillermo';
+import NotFoundPage from '../pages/NotFoundPage';
+import OrdenesPage from '../pages/OrdenesPage';
+import ProductosPage from '../pages/ProductosPage';
+import RecepcionesPage from '../pages/RecepcionesPage';
+import UsuariosPage from '../pages/UsuariosPage';
 
 function ProtectedRoute({ children }) {
-  const user = localStorage.getItem('user');
-  return user ? children : <Navigate to="/login" replace />;
+  const isAuthenticated = Boolean(localStorage.getItem('user'));
+  return isAuthenticated ? children : <Navigate to="/login" replace />;
 }
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        
-        <Route path="/*" element={
-          <ProtectedRoute>
-            <Layout>
-              <Routes>
-                <Route path="/" element={<DashboardPage />} />
-                <Route path="/productos" element={<ProductosPage />} />
-                <Route path="/usuarios" element={<UsuariosPage />} />
-                <Route path="/ordenes" element={<OrdenesPage />} />
-                <Route path="/recepciones" element={<RecepcionesPage />} />
-                <Route path="/lotes" element={<LotesPage />} />
-                <Route path="/movimientos" element={<MovimientosPage />} />
-                <Route path="/jesus" element={<Jesus />} />
-                <Route path="/guillermo" element={<Guillermo />} />
-              </Routes>
-            </Layout>
-          </ProtectedRoute>
-        } />
+        {/* Ruta pública */}
+        <Route
+          path="/login"
+          element={
+            <LoginPage
+          />}
+        />
+
+        {/* Rutas Protegidas dentro de Layout */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <DashboardPage />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/productos"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <ProductosPage />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/lotes"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <LotesPage />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/movimientos"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <MovimientosPage />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/ordenes"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <OrdenesPage />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/recepciones"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <RecepcionesPage />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/usuarios"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <UsuariosPage />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Ruta 404 para cualquier URL no registrada */}
+        <Route path="*"
+          element={
+            <NotFoundPage
+          />}
+        />
       </Routes>
     </BrowserRouter>
   );
