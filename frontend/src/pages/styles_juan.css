@@ -1,22 +1,20 @@
 
 .stock-card {
-  --fondo:          #14100f;  /* color de fondo de la tarjeta */
-  --fondo-tabla:    #1a1413;  /* color de fondo de la tabla */
-  --fondo-cabecera: #100c0b;  /* fila de títulos y buscador */
-  --borde:          #3a2b28;  /* líneas y bordes */
-  --texto:          #f3ece4;  /* texto principal */
-  --texto-suave:    #a99b92;  /* texto secundario */
-  --acento:         #c9a14a;  /* dorado: ID de lote y foco */
-  --alerta:         #e0a84a;  /* fecha de vencimiento */
-  --ok-fondo:   #1c3326;  --ok-texto:   #7fcf9a;  --ok-borde:   #2f5a40;
-  --bajo-fondo: #4a1620;  --bajo-texto: #f08a95;  --bajo-borde: #7c2634;
+  --fondo:          white;  /* color de fondo de la tarjeta */
+  --fondo-tabla:    white;  /* color de fondo de la tabla */
+  --fondo-cabecera: white;  /* fila de títulos y buscador */
+  --borde:          black;  /* líneas y bordes */
+  --texto:          black;  /* texto principal */
+  --texto-suave:    black;  /* texto secundario */
+  --acento:         black;  /* dorado: ID de lote y foco */
+  --alerta:         black;  /* fecha de vencimiento */
+  --ok-fondo:   transparent;  --ok-texto:   #7fcf9a;  --ok-borde:   #2f5a40;
+  --bajo-fondo: transparent;  --bajo-texto: #f08a95;  --bajo-borde: #7c2634;
 
   box-sizing: border-box;
   width: 100%;
   background: var(--fondo);
-  border: 1px solid var(--borde);
   border-radius: 20px;
-  padding: 24px;
   color: var(--texto);
   font-family: "Montserrat", "Segoe UI", system-ui, sans-serif;
 }
@@ -38,7 +36,7 @@
 /* Buscador en forma de píldora */
 .stock-search {
   min-width: 280px;
-  padding: 12px 18px;
+  padding: 5px 18px;
   border-radius: 999px;
   border: 1px solid var(--borde);
   background: var(--fondo-cabecera);
@@ -64,7 +62,6 @@
   padding: 16px 20px;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--texto-suave);
   background: var(--fondo-cabecera);
