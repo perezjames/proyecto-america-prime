@@ -4,10 +4,10 @@ export default function DashboardPage() {
   const user = JSON.parse(localStorage.getItem('user')) || { nombre: 'Usuario', rol: 'Administrador' };
 
   const stats = [
-    { title: 'Total Productos', value: '0', change: '0%', icon: Package },
-    { title: 'Recepciones del Mes', value: '0', change: '0%', icon: Truck },
-    { title: 'Movimientos Hoy', value: '0', change: '0%', icon: TrendingUp },
-    { title: 'Usuarios Activos', value: '0', change: '0%', icon: Users },
+    { title: 'Productos', value: '0', icon: Package },
+    { title: 'Recepciones', value: '0', icon: Truck },
+    { title: 'Movimientos', value: '0', icon: TrendingUp },
+    { title: 'Usuarios Act.', value: '0', icon: Users },
   ];
 
   return (
@@ -31,7 +31,6 @@ export default function DashboardPage() {
               <div>
                 <p className="text-xs font-medium text-slate-500">{stat.title}</p>
                 <p className="text-2xl font-bold text-slate-800 my-1">{stat.value}</p>
-                <span className="text-xs font-bold text-emerald-600">{stat.change}</span>
               </div>
               <div className="w-12 h-12 rounded-xl bg-[#E9F0FF] text-[#4680FF] flex items-center justify-center">
                 <Icon className="w-6 h-6" />

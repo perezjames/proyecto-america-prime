@@ -9,7 +9,7 @@ import OrdenesPage from '../pages/OrdenesPage';
 import ProductosPage from '../pages/ProductosPage';
 import RecepcionesPage from '../pages/RecepcionesPage';
 import UsuariosPage from '../pages/UsuariosPage';
-import LoginTempGuillermo from '../pages/LoginTempGuillermo';
+import Loginv1 from '../pages/LoginTempGuillermo';
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = Boolean(localStorage.getItem('user'));
@@ -100,11 +100,11 @@ export default function AppRouter() {
           }
         />
         <Route
-          path="/logintempguillermo"
+          path="/loginv1"
           element={
             <ProtectedRoute>
               <Layout>
-                <LoginTempGuillermo />
+                <Loginv1 />
               </Layout>
             </ProtectedRoute>
           }

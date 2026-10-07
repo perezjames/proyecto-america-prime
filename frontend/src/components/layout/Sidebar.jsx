@@ -6,7 +6,8 @@ import {
   ShoppingCart, 
   Truck, 
   Boxes, 
-  ArrowLeftRight 
+  ArrowLeftRight,
+  LogIn
 } from 'lucide-react';
 
 const menuItems = [
@@ -17,7 +18,7 @@ const menuItems = [
   { text: 'Recepciones', icon: Truck, path: '/recepciones' },
   { text: 'Lotes', icon: Boxes, path: '/lotes' },
   { text: 'Movimientos', icon: ArrowLeftRight, path: '/movimientos' },
-  { text: 'Login Temp Guillermo', icon: ArrowLeftRight, path: '/logintempguillermo' },
+  { text: 'Login v1.0', icon: LogIn, path: '/loginv1' },
 ];
 
 export default function Sidebar() {
