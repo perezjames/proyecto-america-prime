@@ -17,7 +17,7 @@ export default function Layout({ children }) {
       <div className="flex-1 ml-64 flex flex-col">
         {/* Navbar Superior */}
         <header className="h-16 bg-white border-b border-slate-200 px-8 flex items-center justify-between sticky top-0 z-10">
-          <div className="text-sm text-slate-500">Sistema de Gestión de Inventario</div>
+          <div className="text-sm text-slate-500">Gestión de inventario y operaciones de America Prime</div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-primary-light text-primary flex items-center justify-center font-bold">

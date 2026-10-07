@@ -4,24 +4,21 @@ export default function DashboardPage() {
   const user = JSON.parse(localStorage.getItem('user')) || { nombre: 'Usuario', rol: 'Administrador' };
 
   const stats = [
-    { title: 'Total Productos', value: '1,240', change: '+12.5%', icon: Package },
-    { title: 'Recepciones del Mes', value: '85', change: '+8.2%', icon: Truck },
-    { title: 'Movimientos Hoy', value: '342', change: '+5.0%', icon: TrendingUp },
-    { title: 'Usuarios Activos', value: '18', change: '0%', icon: Users },
+    { title: 'Total Productos', value: '0', change: '0%', icon: Package },
+    { title: 'Recepciones del Mes', value: '0', change: '0%', icon: Truck },
+    { title: 'Movimientos Hoy', value: '0', change: '0%', icon: TrendingUp },
+    { title: 'Usuarios Activos', value: '0', change: '0%', icon: Users },
   ];
 
   return (
     <div className="space-y-6">
       {/* Banner Azul Promocional / Bienvenida */}
-      <div className="p-8 rounded-2xl bg-gradient-to-br from-[#4680FF] to-[#2F53CC] text-white shadow-md flex justify-between items-center">
+      <div className="p-8 rounded-2xl border border-slate-300 bg-white text-black flex justify-between items-center">
         <div>
           <h1 className="text-3xl font-bold mb-2">¡Bienvenido de nuevo, {user.nombre}!</h1>
-          <p className="text-white/90 text-sm">
-            Gestiona los productos, recepciones, lotes e inventario general desde un solo lugar.
+          <p className="text-black/90 text-sm">
+            Gestiona los productos, recepciones, lotes e inventario general desde un solo lugar
           </p>
-          <button className="mt-4 px-4 py-2 bg-white text-[#2F53CC] font-semibold text-sm rounded-lg shadow hover:bg-slate-100 transition-colors">
-            Ver Lotes
-          </button>
         </div>
       </div>
 
@@ -30,7 +27,7 @@ export default function DashboardPage() {
         {stats.map((stat, idx) => {
           const Icon = stat.icon;
           return (
-            <div key={idx} className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+            <div key={idx} className="bg-white p-5 rounded-xl border border-slate-300 flex items-center justify-between">
               <div>
                 <p className="text-xs font-medium text-slate-500">{stat.title}</p>
                 <p className="text-2xl font-bold text-slate-800 my-1">{stat.value}</p>
