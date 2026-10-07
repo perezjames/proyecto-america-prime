@@ -1,25 +1,69 @@
-/* Contenedor principal del segundo formulario (Full HD Style) */
+/* Fondo general negro para toda la página */
+.main-page-background {
+    background-color: #000000;
+    min-height: 100vh;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Centrado y diseño del título principal AMERICA PRIME */
+.main-title-container {
+    text-align: center;
+    margin: 20px auto 30px auto;
+    width: 100%;
+}
+
+.main-title-container h1 {
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.text-america-white {
+    color: #FFFFFF; 
+}
+
+.text-prime-orange {
+    color: #F58320; 
+}
+
+/* Título de la sección de bajas */
+.section-title {
+    text-align: center; 
+    margin: 30px 0 20px 0; 
+    color: #FFFFFF; 
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* 
+  CONTENEDOR DEL SEGUNDO FORMULARIO:
+  Mismas dimensiones exactas que .jesus-container del primer formulario 
+*/
 .form-container {
-    background-color: #F58320; /* Color naranja característico */
-    color: #ffffff;
+    background-color: #F58320;
+    font-family: 'Montserrat', sans-serif;
     padding: 35px;
     border-radius: 16px;
     max-width: 600px;
     margin: 30px auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
-    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    box-sizing: border-box;
 }
 
-/* Encabezado */
 .form-header {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .form-header h2 {
-    font-size: 22px;
+    color: white;
+    font-size: 24px;
     font-weight: 700;
     margin: 0;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -30,70 +74,65 @@
 }
 
 .form-description {
+    color: #FFFFFF;
+    text-align: center;
     font-size: 14px;
-    opacity: 0.95;
     margin-bottom: 25px;
+    opacity: 0.95;
 }
 
-/* Grupos de campos */
 .form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 15px; /* Ajustado para simetría exacta con el form 1 */
 }
 
 .form-group label {
-    font-weight: 600;
-    margin-bottom: 8px;
+    color: white;
     font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
 }
 
-/* Inputs, Selects y Textareas limpios con efecto al enfocar */
-.form-group select,
-.form-group input,
+/* Mismos estilos de inputs y selects que el primer formulario */
+.form-group select, 
+.form-group input[type="number"], 
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
     font-size: 15px;
     background-color: #ffffff;
-    color: #333333;
+    color: #333;
     box-sizing: border-box;
     outline: none;
     transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Efecto brillante al hacer clic en los campos */
-.form-group select:focus,
-.form-group input:focus,
+.form-group select:focus, 
+.form-group input[type="number"]:focus, 
 .form-group textarea:focus {
     border-color: #ffffff;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
-.form-group textarea {
-    resize: vertical;
-}
-
-/* Botón de envío estilizado */
+/* Botón con el mismo tamaño y comportamiento exacto que .btn-confirmar */
 .submit-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    display: block;
     width: 100%;
+    margin-top: 25px;
     background-color: #ffffff;
     color: #F58320;
     border: none;
     padding: 14px;
     font-size: 16px;
     font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     transition: all 0.2s ease;
-    margin-top: 10px;
 }
 
 .submit-btn:hover {
