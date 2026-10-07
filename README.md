@@ -14,12 +14,14 @@ Aplicación web para la gestión de inventario y operaciones de America Prime
 └── frontend/
     └── src/
         ├── api/
+        ├── assets/
         ├── components/
         │   ├── layout/
         │   └── common/
         ├── pages/
-        ├── services/
         ├── routes/
+        ├── services/
+        ├── theme/
         ├── App.jsx
         └── main.jsx
 ```
