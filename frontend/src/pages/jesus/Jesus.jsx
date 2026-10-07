@@ -21,7 +21,6 @@ export default function Jesus() {
     alert(`¡Éxito! El lote fue despachado exitosamente.\n- Lote: ${lote}\n- Unidades despachadas: ${cantidad}`);
   };
 
-
   // --- ESTADOS Y LÓGICA DEL FORMULARIO 2 (Registro de Baja) ---
   const [loteBaja, setLoteBaja] = useState('');
   const [cantidadBaja, setCantidadBaja] = useState('');
@@ -40,18 +39,27 @@ export default function Jesus() {
     alert(`¡Éxito! Baja registrada correctamente.\n- Lote: ${loteBaja}\n- Unidades dadas de baja: ${cantidadBaja}\n- Motivo: ${motivoBaja}`);
   };
 
-
   return (
-    <div>
+    <div className="main-page-background">
+      {/* =================================================== */}
+      {/* TÍTULO PRINCIPAL: AMERICA PRIME (CENTRADO)          */}
+      {/* =================================================== */}
+      <div className="main-title-container">
+        <h1>
+          <span className="text-america-white">AMERICA</span>{' '}
+          <span className="text-prime-orange">PRIME</span>
+        </h1>
+      </div>
+
       {/* =================================================== */}
       {/* TÍTULO DE LA SECCIÓN DE SALIDA DE PRODUCTOS         */}
       {/* =================================================== */}
-      <h1 style={{ textAlign: 'center', margin: '20px 0 20px 0', color: '#333', fontSize: '26px' }}>
+      <h2 className="section-title">
         Sección de Salida de Productos
-      </h1>
+      </h2>
 
       {/* =================================================== */}
-      {/* FORMULARIO 1: Registrar Salida Del Producto        */}
+      {/* FORMULARIO 1: Registrar Salida Del Producto         */}
       {/* =================================================== */}
       <div className="jesus-container">
         <h1 className="title2">Registrar Salida Del Producto</h1>
@@ -88,11 +96,11 @@ export default function Jesus() {
       </div>
 
       {/* =================================================== */}
-      {/* TÍTULO DE LA SECCIÓN DE BAJAS                      */}
+      {/* TÍTULO DE LA SECCIÓN DE BAJAS                       */}
       {/* =================================================== */}
-      <h1 style={{ textAlign: 'center', margin: '40px 0 20px 0', color: '#333', fontSize: '26px' }}>
+      <h2 className="section-title">
         Sección de Registrar Bajas de Unidades
-      </h1>
+      </h2>
 
       {/* =================================================== */}
       {/* FORMULARIO 2: Registrar Baja de Unidades            */}
@@ -158,7 +166,6 @@ export default function Jesus() {
 
         </form>
       </div>
-
     </div>
   );
 }
