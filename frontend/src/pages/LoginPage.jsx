@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { Box, Card, CardContent, TextField, Button, Typography, InputAdornment, IconButton, Alert } from '@mui/material';
-import { Visibility, VisibilityOff, LockOutlined } from '@mui/icons-material';
 import api from '../api/axios';
 import { useNavigate } from 'react-router-dom';
+import { Lock, Eye, EyeOff, AlertCircle } from 'lucide-react';
 
 export default function LoginPage({ onLoginSuccess }) {
   const [email, setEmail] = useState('');
@@ -25,50 +24,67 @@ export default function LoginPage({ onLoginSuccess }) {
   };
 
   return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'background.default' }}>
-      <Card sx={{ maxWidth: 400, width: '100%', p: 2 }}>
-        <CardContent>
-          <Box sx={{ textAlign: 'center', mb: 3 }}>
-            <LockOutlined sx={{ fontSize: 40, color: 'primary.main', mb: 1 }} />
-            <Typography variant="h5" fontWeight="bold">Iniciar Sesión</Typography>
-            <Typography variant="body2" color="text.secondary">Aplicación web para la gestión de inventario y operaciones de America Prime</Typography>
-          </Box>
+    <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4">
+      <div className="max-w-md w-full bg-white p-8 rounded-2xl border border-slate-200 shadow-md">
+        <div className="text-center mb-6">
+          <div className="w-12 h-12 bg-blue-50 text-[#4680FF] rounded-xl flex items-center justify-center mx-auto mb-3">
+            <Lock className="w-6 h-6" />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-800">Iniciar Sesión</h2>
+          <p className="text-xs text-slate-500 mt-1">
+            Aplicación web para la gestión de inventario y operaciones de America Prime
+          </p>
+        </div>
 
-          {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
+        {error && (
+          <div className="mb-4 p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm flex items-center gap-2">
+            <AlertCircle className="w-4 h-4 shrink-0" />
+            <span>{error}</span>
+          </div>
+        )}
 
-          <form onSubmit={handleLogin}>
-            <TextField
-              label="Correo Electrónico"
-              fullWidth
-              margin="normal"
+        <form onSubmit={handleLogin} className="space-y-4">
+          <div>
+            <label className="block text-xs font-semibold text-slate-600 mb-1">Correo Electrónico</label>
+            <input
+              type="email"
+              className="w-full px-3 py-2.5 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4680FF] focus:border-transparent"
+              placeholder="ejemplo@correo.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <TextField
-              label="Contraseña"
-              type={showPassword ? 'text' : 'password'}
-              fullWidth
-              margin="normal"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton onClick={() => setShowPassword(!showPassword)} edge="end">
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-            <Button type="submit" variant="contained" fullWidth size="large" sx={{ mt: 3 }}>
-              Ingresar
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
-    </Box>
+          </div>
+
+          <div>
+            <label className="block text-xs font-semibold text-slate-600 mb-1">Contraseña</label>
+            <div className="relative">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                className="w-full px-3 py-2.5 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4680FF] focus:border-transparent pr-10"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+              >
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full mt-2 py-3 bg-[#4680FF] hover:bg-[#2F53CC] text-white font-semibold rounded-lg text-sm shadow transition-colors"
+          >
+            Ingresar
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
