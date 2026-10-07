@@ -9,6 +9,7 @@ import OrdenesPage from '../pages/OrdenesPage';
 import ProductosPage from '../pages/ProductosPage';
 import RecepcionesPage from '../pages/RecepcionesPage';
 import UsuariosPage from '../pages/UsuariosPage';
+import LoginTempGuillermo from '../pages/LoginTempGuillermo';
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = Boolean(localStorage.getItem('user'));
@@ -94,6 +95,16 @@ export default function AppRouter() {
             <ProtectedRoute>
               <Layout>
                 <UsuariosPage />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/logintempguillermo"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <LoginTempGuillermo />
               </Layout>
             </ProtectedRoute>
           }

@@ -1,19 +1,15 @@
 /* Centra y da forma al cuadro principal */
 .background-container {
-    background-color: #000; /* Color de fondo de la pantalla */
- display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center; /* Centra el logo y el login horizontalmente */
-  margin-top: 50px; /* Separación desde el techo de la pantalla */
+}
 
 .logo {
-  width: 400px; /* Controla qué tan grande quieres el logo */
+  width: 350px; /* Controla qué tan grande quieres el logo */
   height: auto; /* Mantiene la proporción de la imagen para que no se deforme */
-  margin-top: 50px;
-   
 }
 
-}
 .login-container {
   background-color: #f9f9f9; /* Color de fondo del cuadro */  
   display: flex;
@@ -24,7 +20,6 @@
   padding: 30px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
 }
 
 /* Estilos para el texto del título */

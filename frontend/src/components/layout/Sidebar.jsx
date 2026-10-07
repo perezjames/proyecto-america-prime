@@ -17,13 +17,14 @@ const menuItems = [
   { text: 'Recepciones', icon: Truck, path: '/recepciones' },
   { text: 'Lotes', icon: Boxes, path: '/lotes' },
   { text: 'Movimientos', icon: ArrowLeftRight, path: '/movimientos' },
+  { text: 'Login Temp Guillermo', icon: ArrowLeftRight, path: '/logintempguillermo' },
 ];
 
 export default function Sidebar() {
   return (
     <aside className="w-64 bg-white border-r border-slate-200 min-h-screen flex flex-col fixed left-0 top-0 z-20">
       <div className="h-16 flex items-center px-6 border-b border-slate-200">
-        <h1 className="text-xl font-bold text-primary">Able Pro <span className="text-xs text-slate-400 font-normal">v1.0</span></h1>
+        <h1 className="text-xl font-bold text-primary">America Prime <span className="text-xs text-slate-400 font-normal">v1.0</span></h1>
       </div>
       <nav className="flex-1 p-4 space-y-1">
         {menuItems.map((item) => {
