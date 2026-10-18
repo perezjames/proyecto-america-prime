@@ -1,5 +1,5 @@
 import './styles_guillermo.css';
-import logo from '../assets/logo-ap-negativo.svg';
+import logo from '../../assets/logo-ap-negativo.svg';
 
 export default function Guillermo() {
   return (

@@ -1,15 +1,19 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
-import DashboardPage from '../pages/DashboardPage';
-import LoginPage from '../pages/LoginPage';
+import HomePage from '../pages/home/HomePage';
+import LoginPage from '../pages/auth/LoginPage';
 import LotesPage from '../pages/LotesPage';
 import MovimientosPage from '../pages/MovimientosPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import OrdenesPage from '../pages/OrdenesPage';
-import ProductosPage from '../pages/ProductosPage';
+
+import List from '../pages/products/List';
+import Create from '../pages/products/Create';
+import Edit from '../pages/products/Edit';
+
 import RecepcionesPage from '../pages/RecepcionesPage';
 import UsuariosPage from '../pages/UsuariosPage';
-import Loginv1 from '../pages/LoginTempGuillermo';
+import Loginv1 from '../pages/auth/LoginTempGuillermo';
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = Boolean(localStorage.getItem('user'));
@@ -28,23 +32,43 @@ export default function AppRouter() {
           />}
         />
 
-        {/* Rutas Protegidas dentro de Layout */}
+        {/* Rutas protegidas */}
         <Route
           path="/"
           element={
             <ProtectedRoute>
               <Layout>
-                <DashboardPage />
+                <HomePage />
               </Layout>
             </ProtectedRoute>
           }
         />
         <Route
-          path="/productos"
+          path="/products/list"
           element={
             <ProtectedRoute>
               <Layout>
-                <ProductosPage />
+                <List />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/products/create"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Create />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/products/edit/:id"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Edit />
               </Layout>
             </ProtectedRoute>
           }
