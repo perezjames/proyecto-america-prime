@@ -5,6 +5,13 @@ from app.schemas.usuarios import UsuarioCreate, UsuarioUpdate, UsuarioResponse, 
 
 router = APIRouter()
 
+def validar_rol(rol_id: int | None):
+    if rol_id is None:
+        raise HTTPException(status_code=400, detail="rol_id no puede ser nulo")
+    response = supabase.table("ROLES").select("id").eq("id", rol_id).execute()
+    if not response.data:
+        raise HTTPException(status_code=400, detail="Rol no encontrado")
+
 @router.get("/", response_model=List[UsuarioResponse])
 def get_usuarios():
     response = supabase.table("USUARIOS").select("*").execute()
@@ -19,6 +26,7 @@ def get_usuario(id_usuario: int):
 
 @router.post("/", response_model=UsuarioResponse, status_code=status.HTTP_201_CREATED)
 def create_usuario(usuario: UsuarioCreate):
+    validar_rol(usuario.rol_id)
     response = supabase.table("USUARIOS").insert(usuario.model_dump()).execute()
     if not response.data:
         raise HTTPException(status_code=400, detail="Error al crear usuario")
@@ -29,6 +37,8 @@ def update_usuario(id_usuario: int, usuario: UsuarioUpdate):
     data = usuario.model_dump(exclude_unset=True)
     if not data:
         raise HTTPException(status_code=400, detail="No hay datos para actualizar")
+    if "rol_id" in data:
+        validar_rol(data["rol_id"])
     response = supabase.table("USUARIOS").update(data).eq("id_usuario", id_usuario).execute()
     if not response.data:
         raise HTTPException(status_code=404, detail="Usuario no encontrado")
@@ -44,7 +54,7 @@ def delete_usuario(id_usuario: int):
 @router.post("/login")
 def login(credentials: UsuarioLogin):
     response = supabase.table("USUARIOS")\
-        .select("*")\
+        .select("*, ROLES(rol)")\
         .eq("email", credentials.email)\
         .eq("password_hash", credentials.password)\
         .execute()
@@ -56,12 +66,18 @@ def login(credentials: UsuarioLogin):
         )
     
     usuario = response.data[0]
+    if not usuario.get("ROLES"):
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="El usuario no tiene un rol asociado"
+        )
     return {
         "mensaje": "Inicio de sesión exitoso",
         "usuario": {
             "id_usuario": usuario["id_usuario"],
             "nombre": usuario["nombre"],
             "email": usuario["email"],
-            "rol": usuario["rol"]
+            "rol_id": usuario["rol_id"],
+            "rol": usuario["ROLES"]["rol"]
         }
     }
