@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Package, Users, Boxes, ArrowLeftRight, ClipboardList, PackageCheck, ShieldCheck } from 'lucide-react';
 import { getDashboard } from '../../services/dashboardService';
 
-export default function DashboardPage() {
+export default function HomePage() {
   const user = JSON.parse(localStorage.getItem('user')) || { nombre: 'name', rol: 'role' };
   const [counts, setCounts] = useState(null);
   const [error, setError] = useState('');

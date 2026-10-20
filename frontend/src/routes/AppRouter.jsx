@@ -1,4 +1,15 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
+import List from '../pages/products/List';
+import Create from '../pages/products/Create';
+import Edit from '../pages/products/Edit';
+
+import ListUser from '../pages/users/List';
+import CreateUser from '../pages/users/Create';
+import EditUser from '../pages/users/Edit';
+
+import RecepcionesPage from '../pages/RecepcionesPage';
+import Loginv1 from '../pages/auth/LoginTempGuillermo';
 import Layout from '../components/layout/Layout';
 import HomePage from '../pages/home/HomePage';
 import LoginPage from '../pages/auth/LoginPage';
@@ -6,14 +17,6 @@ import LotesPage from '../pages/LotesPage';
 import MovimientosPage from '../pages/MovimientosPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import OrdenesPage from '../pages/OrdenesPage';
-
-import List from '../pages/products/List';
-import Create from '../pages/products/Create';
-import Edit from '../pages/products/Edit';
-
-import RecepcionesPage from '../pages/RecepcionesPage';
-import UsuariosPage from '../pages/UsuariosPage';
-import Loginv1 from '../pages/auth/LoginTempGuillermo';
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = Boolean(localStorage.getItem('user'));
@@ -74,6 +77,42 @@ export default function AppRouter() {
           }
         />
         <Route
+          path="/users/list"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <ListUser />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/users/create"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <CreateUser />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/users/edit/:id"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <EditUser />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+
+
+
+
+
+
+        <Route
           path="/lotes"
           element={
             <ProtectedRoute>
@@ -113,16 +152,7 @@ export default function AppRouter() {
             </ProtectedRoute>
           }
         />
-        <Route
-          path="/usuarios"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <UsuariosPage />
-              </Layout>
-            </ProtectedRoute>
-          }
-        />
+
         <Route
           path="/loginv1"
           element={

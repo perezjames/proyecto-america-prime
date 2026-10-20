@@ -14,14 +14,23 @@ Aplicación web para la gestión de inventario y operaciones de America Prime
 └── frontend/
     ├── public/
     └── src/
-        ├── api/
-        ├── assets/
-        ├── components/
-        │   ├── common/
-        │   └── layout/
+        ├── api/axios.js
+        └── assets/
+        │   ├── logo-ap-negativo.svg
+        │   ├── logo-ap-positivo.svg
+    │   │   └── logo-ue.webp
+        ├── components/layout/
+        │   ├── Layout.jsx
+    │   │   └── Sidebar.jsx
         ├── pages/
+        │   ├── auth/
+                products/
+    │   │   └── home/
+            ...
         ├── routes/
+            └── AppRouter.jsx
         ├── services/
+            └── ...
         ├── App.jsx
         ├── index.css
         └── main.jsx

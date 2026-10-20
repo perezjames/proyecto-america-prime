@@ -24,6 +24,15 @@ const menuItems = [
     ]
   },
   { 
+    text: 'Users',
+    icon: Users,
+    subItems: [
+      { text: 'List', path: '/users/list', badge: 3, badgeColor: 'bg-[#383838] text-white' },
+      { text: 'Create', path: '/users/create' },
+      { text: 'Edit', path: '/users/edit/*' }
+    ]
+  },
+  { 
     text: 'Customers', 
     icon: Users,
     subItems: [

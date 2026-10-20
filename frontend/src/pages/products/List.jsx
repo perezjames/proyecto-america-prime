@@ -96,7 +96,7 @@ export default function ProductListPage() {
         {productos.length > 0 && (
           <div className="flex items-center justify-between px-4 py-3 bg-[#ed7b07]/2">
             <span className="text-sm text-slate">
-              Mostrando {indexOfFirstItem + 1} a {Math.min(indexOfLastItem, productos.length)} de {productos.length}
+              Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, productos.length)} of {productos.length}
             </span>
             <div className="flex gap-1">
               <button
