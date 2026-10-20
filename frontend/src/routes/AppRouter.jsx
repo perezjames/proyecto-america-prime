@@ -67,7 +67,7 @@ export default function AppRouter() {
             </ProtectedRoute>
           }
         />
-        */}
+
         <Route
           path="/products/list"
           element={
@@ -213,6 +213,121 @@ export default function AppRouter() {
                 <Loginv1 />
               </Layout>
             </ProtectedRoute>
+          }
+        />
+        */}
+        <Route
+          path="/products/list"
+          element={
+            <Layout>
+              <List />
+            </Layout>
+          }
+        />
+        <Route
+          path="/products/create"
+          element={
+            <Layout>
+              <Create />
+            </Layout>
+          }
+        />
+        <Route
+          path="/products/edit/:id"
+          element={
+            <Layout>
+              <Edit />
+            </Layout>
+          }
+        />
+        <Route
+          path="/users/list"
+          element={
+            <Layout>
+              <ListUser />
+            </Layout>
+          }
+        />
+        <Route
+          path="/users/create"
+          element={
+            <Layout>
+              <CreateUser />
+            </Layout>
+          }
+        />
+        <Route
+          path="/users/edit/:id"
+          element={
+            <Layout>
+              <EditUser />
+            </Layout>
+          }
+        />
+        <Route
+          path="/batches/list"
+          element={
+            <Layout>
+              <ListBatch />
+            </Layout>
+          }
+        />
+        <Route
+          path="/batches/create"
+          element={
+            <Layout>
+              <CreateBatch />
+            </Layout>
+          }
+        />
+        <Route
+          path="/batches/edit/:id"
+          element={
+            <Layout>
+              <EditBatch />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/lotes"
+          element={
+            <Layout>
+              <LotesPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/movimientos"
+          element={
+            <Layout>
+              <MovimientosPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/ordenes"
+          element={
+            <Layout>
+              <OrdenesPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/recepciones"
+          element={
+            <Layout>
+              <RecepcionesPage />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/loginv1"
+          element={
+            <Layout>
+              <Loginv1 />
+            </Layout>
           }
         />
 
