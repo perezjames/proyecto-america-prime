@@ -7,7 +7,7 @@ app = FastAPI(title="API America Prime", version="1.0.0")
 # Configuración de CORS front
 origins = [
     "http://localhost:5173",  # port default vite
-    "http://127.0.0.1:5173",
+    "http://127.0.0.1:8000",  # port default backend
     "https://proyecto-america-prime.vercel.app", # front vercel
 ]
 
