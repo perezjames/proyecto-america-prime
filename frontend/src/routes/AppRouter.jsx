@@ -8,11 +8,19 @@ import ListUser from '../pages/users/List';
 import CreateUser from '../pages/users/Create';
 import EditUser from '../pages/users/Edit';
 
+import ListBatch from '../pages/batches/List';
+import CreateBatch from '../pages/batches/Create';
+import EditBatch from '../pages/batches/Edit';
+
+// AGREGAR AQUI LAS RUTAS DE LOS DEMAS COMPONENTES
+
+
+
 import RecepcionesPage from '../pages/RecepcionesPage';
 import Loginv1 from '../pages/auth/LoginTempGuillermo';
 import Layout from '../components/layout/Layout';
 import HomePage from '../pages/home/HomePage';
-import LoginPage from '../pages/auth/LoginPage';
+// import LoginPage from '../pages/auth/LoginPage';
 import LotesPage from '../pages/LotesPage';
 import MovimientosPage from '../pages/MovimientosPage';
 import NotFoundPage from '../pages/NotFoundPage';
@@ -28,14 +36,27 @@ export default function AppRouter() {
     <BrowserRouter>
       <Routes>
         {/* Ruta pública */}
+        {/*
         <Route
           path="/login"
           element={
             <LoginPage
           />}
         />
+        */}
+
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <HomePage />
+            </Layout>
+          }
+        />
+        
 
         {/* Rutas protegidas */}
+        {/* 
         <Route
           path="/"
           element={
@@ -46,6 +67,7 @@ export default function AppRouter() {
             </ProtectedRoute>
           }
         />
+        */}
         <Route
           path="/products/list"
           element={
@@ -102,6 +124,36 @@ export default function AppRouter() {
             <ProtectedRoute>
               <Layout>
                 <EditUser />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/batches/list"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <ListBatch />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/batches/create"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <CreateBatch />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/batches/edit/:id"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <EditBatch />
               </Layout>
             </ProtectedRoute>
           }

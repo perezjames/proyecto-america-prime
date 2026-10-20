@@ -27,13 +27,13 @@ export default function HomePage() {
   }, []);
 
   const stats = [
-    { title: 'Batches', value: counts?.lotes, icon: Boxes },
+    { title: 'Batches TERMINADO', value: counts?.lotes, icon: Boxes },
     { title: 'Movements', value: counts?.movimientos, icon: ArrowLeftRight },
     { title: 'Orders', value: counts?.ordenes, icon: ClipboardList },
-    { title: 'Products', value: counts?.productos, icon: Package },
+    { title: 'Products TERMINADO', value: counts?.productos, icon: Package },
     { title: 'Receipts', value: counts?.recepciones, icon: PackageCheck },
     { title: 'Roles', value: counts?.roles, icon: ShieldCheck },
-    { title: 'Users', value: counts?.usuarios, icon: Users },
+    { title: 'Users TERMINADO', value: counts?.usuarios, icon: Users },
   ];
 
   return (

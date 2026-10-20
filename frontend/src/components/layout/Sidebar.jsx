@@ -3,13 +3,12 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { 
   Home, 
   Beef,
-  Users, 
-  ShoppingCart,
-  Boxes, 
-  ArrowLeftRight,
+  Users,
+  Boxes,
   ChevronDown,
   ChevronUp,
-  LogOut
+  LogOut,
+  SquareDashed
 } from 'lucide-react';
 
 const menuItems = [
@@ -33,20 +32,22 @@ const menuItems = [
     ]
   },
   { 
-    text: 'Customers', 
-    icon: Users,
+    text: 'Batches', 
+    icon: Boxes,
     subItems: [
-      { text: 'List', path: '/clientes/lista' },
-      { text: 'Details', path: '/clientes/detalles' }
+      { text: 'List', path: '/batches/list' },
+      { text: 'Create', path: '/batches/create' },
+      { text: 'Edit', path: '/batches/edit/*' }
     ]
   },
-  { text: 'Shop', icon: ShoppingCart, path: '/shop' },
+  //rutas libres ejemplos
   { 
-    text: 'Income', 
-    icon: ArrowLeftRight,
+    text: 'Nombre de la ruta', 
+    icon: SquareDashed,
     subItems: [
-      { text: 'Earnings', path: '/ingresos/ganancias' },
-      { text: 'Refunds', path: '/ingresos/reembolsos' }
+      { text: 'Earnings', path: '/ingresos/ganancias' }, //List --> /roles/list
+      { text: 'Refunds', path: '/ingresos/reembolsos' }, //Create
+      { text: 'Refunds', path: '/ingresos/reembolsos' } //Edit
     ]
   },
   { text: 'Promote', icon: Boxes, path: '/promote' },
