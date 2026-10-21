@@ -8,7 +8,7 @@ import {
   ChevronDown,
   ChevronUp,
   LogOut,
-  SquareDashed
+  ListTodo
 } from 'lucide-react';
 
 const menuItems = [
@@ -42,12 +42,12 @@ const menuItems = [
   },
   //rutas libres ejemplos
   { 
-    text: 'Nombre de la ruta', 
-    icon: SquareDashed,
+    text: 'Orders', 
+    icon: ListTodo,
     subItems: [
-      { text: 'Earnings', path: '/ingresos/ganancias' }, //List --> /roles/list
-      { text: 'Refunds', path: '/ingresos/reembolsos' }, //Create
-      { text: 'Refunds', path: '/ingresos/reembolsos' } //Edit
+      { text: 'List', path: '/orders/list' }, //List --> /roles/list
+      { text: 'Create', path: '/orders/create' }, //Create
+      { text: 'Edit', path: '/orders/edit/*' } //Edit
     ]
   },
   { text: 'Promote', icon: Boxes, path: '/promote' },
