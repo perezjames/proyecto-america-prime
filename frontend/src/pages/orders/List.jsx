@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getOrdenes, deleteOrden } from '../../services/ordenesService';
 import { Trash2, Edit2, ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function ProductListPage() {
+export default function OrdenListPage() {
   const navigate = useNavigate();
   const [lotes, setLotes] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -66,7 +66,7 @@ export default function ProductListPage() {
                   <td className="p-4 text-center">{prod.metodo_carga}</td>
                   <td className="p-4 flex justify-center gap-2">
                     <button
-                      onClick={() => navigate(`/products/edit/${prod.id_orden}`)}
+                      onClick={() => navigate(`/orders/edit/${prod.id_orden}`)}
                       className="p-1.5 text-[#ed7b07] hover:bg-[#ffe5d1] rounded-lg transition-colors"
                       title="Editar"
                     >
