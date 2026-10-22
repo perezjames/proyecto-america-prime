@@ -12,6 +12,10 @@ import ListBatch from '../pages/batches/List';
 import CreateBatch from '../pages/batches/Create';
 import EditBatch from '../pages/batches/Edit';
 
+import ListOrder from '../pages/orders/List';
+import CreateOrder from '../pages/orders/Create';
+import EditOrder from '../pages/orders/Edit';
+
 // AGREGAR AQUI LAS RUTAS DE LOS DEMAS COMPONENTES
 
 
@@ -35,15 +39,35 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Ruta pública */}
-        {/*
+
+       
         <Route
-          path="/login"
+          path="/orders/list"
           element={
-            <LoginPage
-          />}
+            <Layout>
+              <ListOrder />
+            </Layout>
+          }
         />
-        */}
+
+          <Route
+          path="/orders/Create"
+          element={
+            <Layout>
+              <CreateOrder />
+            </Layout>
+          }
+        />
+
+          <Route
+          path="/orders/Edit/:id"
+          element={
+            <Layout>
+              <EditOrder />
+            </Layout>
+          }
+        />  
+
 
         <Route
           path="/"
