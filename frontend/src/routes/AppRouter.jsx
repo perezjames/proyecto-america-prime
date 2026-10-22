@@ -1,5 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
+import Layout from '../components/layout/Layout';
+import LoginPage from '../pages/auth/LoginPage';
+import HomePage from '../pages/home/HomePage';
+import NotFoundPage from '../pages/found/NotFoundPage';
+
 import List from '../pages/products/List';
 import Create from '../pages/products/Create';
 import Edit from '../pages/products/Edit';
@@ -12,23 +17,17 @@ import ListBatch from '../pages/batches/List';
 import CreateBatch from '../pages/batches/Create';
 import EditBatch from '../pages/batches/Edit';
 
+import ListReceipt from '../pages/receipts/List';
+import CreateReceipt from '../pages/receipts/Create';
+import EditReceipt from '../pages/receipts/Edit';
+
+import ListMovement from '../pages/movements/List';
+import CreateMovement from '../pages/movements/Create';
+import EditMovement from '../pages/movements/Edit';
+
 import ListOrder from '../pages/orders/List';
 import CreateOrder from '../pages/orders/Create';
 import EditOrder from '../pages/orders/Edit';
-
-// AGREGAR AQUI LAS RUTAS DE LOS DEMAS COMPONENTES
-
-
-
-import RecepcionesPage from '../pages/RecepcionesPage';
-import Loginv1 from '../pages/auth/LoginTempGuillermo';
-import Layout from '../components/layout/Layout';
-import HomePage from '../pages/home/HomePage';
-// import LoginPage from '../pages/auth/LoginPage';
-import LotesPage from '../pages/LotesPage';
-import MovimientosPage from '../pages/MovimientosPage';
-import NotFoundPage from '../pages/NotFoundPage';
-import OrdenesPage from '../pages/OrdenesPage';
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = Boolean(localStorage.getItem('user'));
@@ -39,48 +38,24 @@ export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-
-       
+        {/* Rutas publicas */}
+        {/* Login */}
         <Route
-          path="/orders/list"
+          path="/login"
           element={
-            <Layout>
-              <ListOrder />
-            </Layout>
-          }
-        />
-
-          <Route
-          path="/orders/Create"
-          element={
-            <Layout>
-              <CreateOrder />
-            </Layout>
-          }
-        />
-
-          <Route
-          path="/orders/Edit/:id"
-          element={
-            <Layout>
-              <EditOrder />
-            </Layout>
-          }
-        />  
-
-
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <HomePage />
-            </Layout>
+              <LoginPage />
           }
         />
         
-
+        {/* 404 */}
+        <Route path="*"
+          element={
+            <NotFoundPage
+          />}
+        />
+        
         {/* Rutas protegidas */}
-        {/* 
+        {/* Home */}
         <Route
           path="/"
           element={
@@ -92,6 +67,7 @@ export default function AppRouter() {
           }
         />
 
+        {/* Products */}
         <Route
           path="/products/list"
           element={
@@ -122,6 +98,8 @@ export default function AppRouter() {
             </ProtectedRoute>
           }
         />
+
+        {/* Users */}
         <Route
           path="/users/list"
           element={
@@ -152,6 +130,8 @@ export default function AppRouter() {
             </ProtectedRoute>
           }
         />
+
+        {/* Batches */}
         <Route
           path="/batches/list"
           element={
@@ -183,183 +163,100 @@ export default function AppRouter() {
           }
         />
 
-
-
-
-
-
+        {/* Receipts */}
         <Route
-          path="/lotes"
+          path="/receipts/list"
           element={
             <ProtectedRoute>
               <Layout>
-                <LotesPage />
+                <ListReceipt />
               </Layout>
             </ProtectedRoute>
           }
         />
         <Route
-          path="/movimientos"
+          path="/receipts/create"
           element={
             <ProtectedRoute>
               <Layout>
-                <MovimientosPage />
+                <CreateReceipt />
               </Layout>
             </ProtectedRoute>
           }
         />
         <Route
-          path="/ordenes"
+          path="/receipts/edit/:id"
           element={
             <ProtectedRoute>
               <Layout>
-                <OrdenesPage />
-              </Layout>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/recepciones"
-          element={
-            <ProtectedRoute>
-              <Layout>
-                <RecepcionesPage />
+                <EditReceipt />
               </Layout>
             </ProtectedRoute>
           }
         />
 
+        {/* Movements */}
         <Route
-          path="/loginv1"
+          path="/movements/list"
           element={
             <ProtectedRoute>
               <Layout>
-                <Loginv1 />
+                <ListMovement />
               </Layout>
             </ProtectedRoute>
           }
         />
-        */}
         <Route
-          path="/products/list"
+          path="/movements/create"
           element={
-            <Layout>
-              <List />
-            </Layout>
+            <ProtectedRoute>
+              <Layout>
+                <CreateMovement />
+              </Layout>
+            </ProtectedRoute>
           }
         />
         <Route
-          path="/products/create"
+          path="/movements/edit/:id"
           element={
-            <Layout>
-              <Create />
-            </Layout>
-          }
-        />
-        <Route
-          path="/products/edit/:id"
-          element={
-            <Layout>
-              <Edit />
-            </Layout>
-          }
-        />
-        <Route
-          path="/users/list"
-          element={
-            <Layout>
-              <ListUser />
-            </Layout>
-          }
-        />
-        <Route
-          path="/users/create"
-          element={
-            <Layout>
-              <CreateUser />
-            </Layout>
-          }
-        />
-        <Route
-          path="/users/edit/:id"
-          element={
-            <Layout>
-              <EditUser />
-            </Layout>
-          }
-        />
-        <Route
-          path="/batches/list"
-          element={
-            <Layout>
-              <ListBatch />
-            </Layout>
-          }
-        />
-        <Route
-          path="/batches/create"
-          element={
-            <Layout>
-              <CreateBatch />
-            </Layout>
-          }
-        />
-        <Route
-          path="/batches/edit/:id"
-          element={
-            <Layout>
-              <EditBatch />
-            </Layout>
+            <ProtectedRoute>
+              <Layout>
+                <EditMovement />
+              </Layout>
+            </ProtectedRoute>
           }
         />
 
+        {/* Orders */}
         <Route
-          path="/lotes"
+          path="/orders/list"
           element={
-            <Layout>
-              <LotesPage />
-            </Layout>
+            <ProtectedRoute>
+              <Layout>
+                <ListOrder />
+              </Layout>
+            </ProtectedRoute>
           }
         />
         <Route
-          path="/movimientos"
+          path="/orders/create"
           element={
-            <Layout>
-              <MovimientosPage />
-            </Layout>
+            <ProtectedRoute>
+              <Layout>
+                <CreateOrder />
+              </Layout>
+            </ProtectedRoute>
           }
         />
         <Route
-          path="/ordenes"
+          path="/orders/edit/:id"
           element={
-            <Layout>
-              <OrdenesPage />
-            </Layout>
+            <ProtectedRoute>
+              <Layout>
+                <EditOrder />
+              </Layout>
+            </ProtectedRoute>
           }
-        />
-        <Route
-          path="/recepciones"
-          element={
-            <Layout>
-              <RecepcionesPage />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/loginv1"
-          element={
-            <Layout>
-              <Loginv1 />
-            </Layout>
-          }
-        />
-
-        {/* Ruta 404 para cualquier URL no registrada */}
-        <Route path="*"
-          element={
-            <NotFoundPage
-          />}
         />
       </Routes>
     </BrowserRouter>
