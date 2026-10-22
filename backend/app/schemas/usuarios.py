@@ -7,7 +7,7 @@ class UsuarioBase(BaseModel):
     email: EmailStr
 
 class UsuarioCreate(UsuarioBase):
-    password: str
+    password_hash: str
 
 class UsuarioLogin(BaseModel):
     email: EmailStr
