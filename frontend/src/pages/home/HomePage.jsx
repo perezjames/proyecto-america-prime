@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Package, Users, Boxes, ArrowLeftRight, ClipboardList, PackageCheck, ShieldCheck } from 'lucide-react';
 import { getDashboard } from '../../services/dashboardService';
 
 export default function HomePage() {
@@ -27,13 +26,13 @@ export default function HomePage() {
   }, []);
 
   const stats = [
-    { title: 'Batches TERMINADO', value: counts?.lotes, icon: Boxes },
-    { title: 'Movements', value: counts?.movimientos, icon: ArrowLeftRight },
-    { title: 'Orders', value: counts?.ordenes, icon: ClipboardList },
-    { title: 'Products TERMINADO', value: counts?.productos, icon: Package },
-    { title: 'Receipts', value: counts?.recepciones, icon: PackageCheck },
-    { title: 'Roles', value: counts?.roles, icon: ShieldCheck },
-    { title: 'Users TERMINADO', value: counts?.usuarios, icon: Users },
+    { title: 'Batches', value: counts?.lotes },
+    { title: 'Movements', value: counts?.movimientos },
+    { title: 'Orders', value: counts?.ordenes },
+    { title: 'Products', value: counts?.productos },
+    { title: 'Receipts', value: counts?.recepciones },
+    { title: 'Roles', value: counts?.roles },
+    { title: 'Users', value: counts?.usuarios },
   ];
 
   return (
@@ -51,17 +50,13 @@ export default function HomePage() {
 
       <div aria-busy={!counts && !error} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, idx) => {
-          const Icon = stat.icon;
           return (
-            <div key={idx} className="bg-white p-5 rounded-xl border border-slate-300 flex items-center justify-between">
+            <div key={idx} className="p-5 rounded-xl border border-slate-300 flex items-center justify-between">
               <div>
                 <p className="text-xs font-medium text-slate-500">{stat.title}</p>
-                <p className="text-2xl font-bold text-slate-800 my-1">
+                <p className="text-2xl text-slate-800 my-1">
                   {counts ? stat.value : error ? '—' : '0'}
                 </p>
-              </div>
-              <div className="w-12 h-12 rounded-xl bg-[#ed7b07]/10 text-[#ed7b07] flex items-center justify-center">
-                <Icon className="w-6 h-6" />
               </div>
             </div>
           );

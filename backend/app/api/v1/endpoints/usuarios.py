@@ -56,7 +56,7 @@ def login(credentials: UsuarioLogin):
     response = supabase.table("USUARIOS")\
         .select("*, ROLES(rol)")\
         .eq("email", credentials.email)\
-        .eq("password_hash", credentials.password)\
+        .eq("password_hash", credentials.password_hash)\
         .execute()
     
     if not response.data:

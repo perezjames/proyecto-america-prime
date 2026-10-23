@@ -11,12 +11,12 @@ export const getUsuarioById = async (id) => {
 };
 
 export const createUsuario = async (usuarioData) => {
-  const response = await api.post('/usuarios/', productoData);
+  const response = await api.post('/usuarios/', usuarioData);
   return response.data;
 };
 
 export const updateUsuario = async (codigo, usuarioData) => {
-  const response = await api.put(`/productos/${codigo}`, productoData);
+  const response = await api.put(`/usuarios/${codigo}`, usuarioData);
   return response.data;
 };
 

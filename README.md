@@ -45,10 +45,13 @@ proyecto-america-prime/
 │   └── uv.lock
 ├── frontend/
 │   ├── public/
+│   │   └── ap-favicon.png
 │   ├── src/
 │   │   ├── api/
 │   │   │   └── axios.js
 │   │   ├── assets/
+│   │   │   ├── ap-background.png
+│   │   │   ├── ap-prime.webp
 │   │   │   ├── logo-ap-negativo.svg
 │   │   │   ├── logo-ap-positivo.svg
 │   │   │   └── logo-ue.webp
@@ -58,9 +61,7 @@ proyecto-america-prime/
 │   │   │       └── Sidebar.jsx
 │   │   ├── pages/
 │   │   │   ├── auth/
-│   │   │   │   ├── LoginPage.jsx
-│   │   │   │   ├── LoginTempGuillermo.jsx
-│   │   │   │   └── styles_guillermo.css
+│   │   │   │   └── LoginPage.jsx
 │   │   │   ├── batches/
 │   │   │   │   ├── Create.jsx
 │   │   │   │   ├── Edit.jsx
@@ -77,14 +78,10 @@ proyecto-america-prime/
 │   │   │   │   ├── Create.jsx
 │   │   │   │   ├── Edit.jsx
 │   │   │   │   └── List.jsx
-│   │   │   ├── LotesPage.jsx
-│   │   │   ├── MovimientosPage.jsx
-│   │   │   ├── NotFoundPage.jsx
+│   │   │   ├── found/
+│   │   │   │   └── NotFoundPage.jsx
 │   │   │   ├── OrdenesPage.jsx
-│   │   │   ├── RecepcionesPage.jsx
-│   │   │   ├── style_jesus2.css
-│   │   │   ├── styles_jesus.css
-│   │   │   └── styles_juan.css
+│   │   │   └── RecepcionesPage.jsx
 │   │   ├── routes/
 │   │   │   └── AppRouter.jsx
 │   │   ├── services/

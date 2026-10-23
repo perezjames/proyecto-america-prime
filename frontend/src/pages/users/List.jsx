@@ -58,12 +58,6 @@ export default function UserListPage() {
         <div>
           <h1 className="text-2xl text-slate-800">User Management</h1>
         </div>
-        <button
-          onClick={() => navigate('/usuarios/nuevo')}
-          className="flex items-center gap-2 bg-[#ed7b07] hover:bg-[#d66d06] text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm"
-        >
-          <Plus className="w-4 h-4" /> Nuevo Usuario
-        </button>
       </div>
 
       <div className="rounded-xl overflow-hidden flex flex-col h-full">
@@ -82,25 +76,20 @@ export default function UserListPage() {
                 const roleName = getRoleName(user.rol_id);
                 return (
                   <tr key={user.id_usuario} className="hover:bg-slate-50 transition-colors">
-                    <td className="p-4 font-semibold text-slate-800">{user.nombre}</td>
+                    <td className="p-4">{user.nombre}</td>
                     <td className="p-4">{user.email}</td>
-                    <td className="p-4">
-                      <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700`}>
-                        {roleName === 'Administrador' && <Shield className="w-3 h-3" />}
-                        {roleName}
-                      </span>
-                    </td>
+                    <td className="p-4">{roleName}</td>
                     <td className="p-4 flex justify-center gap-2">
                       <button
-                        onClick={() => navigate(`/usuarios/editar/${user.id_usuario}`)}
-                        className="p-1.5 text-blue-500 hover:bg-blue-50 rounded-lg transition-colors"
+                        onClick={() => navigate(`/users/edit/${user.id_usuario}`)}
+                        className="p-1.5 text-[#ed7b07] hover:bg-[#ffe5d1] rounded-lg transition-colors"
                         title="Editar"
                       >
                         <Edit2 className="w-4 h-4" />
                       </button>
                       <button
                         onClick={() => handleDelete(user.id_usuario)}
-                        className="p-1.5 text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                        className="p-1.5 text-[#ed7b07] hover:bg-[#ffe5d1] rounded-lg transition-colors"
                         title="Eliminar"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -112,7 +101,7 @@ export default function UserListPage() {
               {usuarios.length === 0 && (
                 <tr>
                   <td colSpan={4} className="p-6 text-center text-slate-400 text-sm">
-                    No hay usuarios registrados.
+                    There are no registered users.
                   </td>
                 </tr>
               )}
@@ -121,22 +110,22 @@ export default function UserListPage() {
         </div>
 
         {usuarios.length > 0 && (
-          <div className="flex items-center justify-between px-4 py-3 border-t border-slate-200 bg-slate-50">
-            <span className="text-sm text-slate-500">
-              Mostrando {indexOfFirstItem + 1} a {Math.min(indexOfLastItem, usuarios.length)} de {usuarios.length}
+          <div className="flex items-center justify-between px-4 py-3 bg-[#ed7b07]/2">
+            <span className="text-sm text-slate">
+              Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, usuarios.length)} of {usuarios.length}
             </span>
             <div className="flex gap-1">
               <button
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
-                className="p-1.5 rounded border border-slate-200 bg-white text-slate-600 disabled:opacity-50 hover:bg-slate-100"
+                className="p-1.5 rounded text-slate disabled:opacity-40 transition-colors"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                 disabled={currentPage === totalPages}
-                className="p-1.5 rounded border border-slate-200 bg-white text-slate-600 disabled:opacity-50 hover:bg-slate-100"
+                className="p-1.5 rounded text-slate disabled:opacity-40 transition-colors"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>

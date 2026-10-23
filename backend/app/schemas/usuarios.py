@@ -11,7 +11,7 @@ class UsuarioCreate(UsuarioBase):
 
 class UsuarioLogin(BaseModel):
     email: EmailStr
-    password: str
+    password_hash: str
 
 class UsuarioUpdate(BaseModel):
     nombre: Optional[str] = None

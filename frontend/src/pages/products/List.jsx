@@ -59,7 +59,7 @@ export default function ProductListPage() {
             <tbody className="divide-y divide-slate-100 text-sm text-slate-700">
               {currentProductos.map((prod) => (
                 <tr key={prod.codigo_producto} className="hover:bg-slate-50 transition-colors">
-                  <td className="p-4 font-semibold">{prod.codigo_producto}</td>
+                  <td className="p-4">{prod.codigo_producto}</td>
                   <td className="p-4">{prod.descripcion}</td>
                   <td className="p-4">{prod.presentacion}</td>
                   <td className="p-4 text-center">{prod.stock_minimo}</td>
